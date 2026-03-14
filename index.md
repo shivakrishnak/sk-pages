@@ -11,7 +11,7 @@ permalink: /
 
 > One document. Everything you need. No external references.
 >
-> A self-contained system for becoming an exceptional thinker, communicator, and professional — designed for a 33-year-old Indian male targeting elite-level English fluency, deep intellectual ability, and commanding presence.
+> A self-contained system for becoming an exceptional thinker, communicator, and professional
 
 ---
 
