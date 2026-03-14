@@ -1,3 +1,9 @@
+---
+title: Home
+nav_order: 1
+has_toc: true
+---
+
 # The Complete Mastery System
 
 > One document. Everything you need. No external references.
