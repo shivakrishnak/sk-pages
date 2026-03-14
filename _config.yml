@@ -1,10 +1,20 @@
 title: Complete-Mastery-System
 description: Complete Mastery System
-theme: just-the-docs
-markdown: kramdown
-search_enabled: true
 
-url: https://shivakrishnak.github.io/<repo-name>
+remote_theme: just-the-docs/just-the-docs
+
+plugins:
+  - jekyll-remote-theme
+
+search_enabled: true
+toc_enabled: true
+nav_sort: case_insensitive
+heading_anchors: true
+
+plugins:
+  - jekyll-remote-theme
+  
+url: https://shivakrishnak.github.io/sk-pages
 
 aux_links:
   Repository: https://github.com/shivakrishnak/sk-pages
