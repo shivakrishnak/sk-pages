@@ -1,3 +1,4 @@
-theme: jekyll-theme-cayman
 title: Complete-Mastery-System
-description: Complete-Mastery-System
+description: Complete Mastery System
+theme: jekyll-theme-cayman
+markdown: kramdown
