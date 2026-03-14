@@ -2,6 +2,7 @@ title: Complete-Mastery-System
 description: Complete Mastery System
 theme: just-the-docs
 markdown: kramdown
+search_enabled: true
 
 url: https://shivakrishnak.github.io/<repo-name>
 
