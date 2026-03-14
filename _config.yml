@@ -1,4 +1,9 @@
 title: Complete-Mastery-System
 description: Complete Mastery System
-theme: jekyll-theme-cayman
+theme: just-the-docs
 markdown: kramdown
+
+url: https://shivakrishnak.github.io/<repo-name>
+
+aux_links:
+  Repository: https://github.com/shivakrishnak/sk-pages
