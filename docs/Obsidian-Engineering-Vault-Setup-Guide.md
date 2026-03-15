@@ -358,7 +358,7 @@ each case. Look into this pattern more.
 ### 01 Engineering Knowledge — Atomic Technical Notes
 
 **File:** `01 Engineering Knowledge/Circuit Breaker Pattern.md`
-```markdown
+````markdown
 # Circuit Breaker Pattern
 
 A resilience pattern that prevents cascading failures. When a downstream 
@@ -421,10 +421,10 @@ Try<Price> result = Try.ofSupplier(decorated)
 ---
 **Source:** Release It! (Michael Nygard), Our payment-service implementation
 **Tags:** #design-pattern #resilience #microservices
-```
+````
 
 **File:** `01 Engineering Knowledge/PostgreSQL Index Types.md`
-```markdown
+````markdown
 # PostgreSQL Index Types
 
 ## B-Tree (Default)
@@ -475,10 +475,10 @@ Use `EXPLAIN ANALYZE` to verify your index is actually being used.
 ---
 **Related:** [[Query Optimization]] | [[EXPLAIN ANALYZE]] | [[Database Partitioning]]
 **Tags:** #database #postgresql #performance
-```
+````
 
 **File:** `01 Engineering Knowledge/Discriminated Union Types.md`
-```markdown
+````markdown
 # Discriminated Union Types (Tagged Unions)
 
 A pattern where a "type" or "status" field determines which other fields 
@@ -536,14 +536,14 @@ function handle(response: ApiResponse) {
 **Related:** [[TypeScript Utility Types]] | [[Exhaustive Switch]] | [[Code Review - Order Status PR]]
 **Source:** Learned from [[Priya Sharma]]'s PR review
 **Tags:** #typescript #design-pattern #type-safety
-```
+````
 
 ---
 
 ### 02 Architecture Decisions
 
 **File:** `02 Architecture Decisions/ADR-001 - Kafka over RabbitMQ for event streaming.md`
-```markdown
+````markdown
 # ADR-001: Kafka over RabbitMQ for Event Streaming
 
 **Date:** 2026-02-15
@@ -584,14 +584,14 @@ direct HTTP calls, which creates tight coupling and cascading failures.
 ---
 **Related:** [[order-service]] | [[notification-service]] | [[Event Sourcing]] | [[Kafka Consumer Groups]]
 **Tags:** #adr #architecture #messaging
-```
+````
 
 ---
 
 ### 03 Systems & Services
 
 **File:** `03 Systems & Services/order-service.md`
-```markdown
+````markdown
 # order-service
 
 **Owner:** Commerce team (tech lead: Amit Kumar)
@@ -659,14 +659,14 @@ tracking, cancellation, and refunds. The source of truth for all order data.
 **Last updated:** 2026-03-15
 **Related:** [[payment-service]] | [[inventory-service]] | [[notification-service]]
 **Tags:** #system #commerce #core-service
-```
+````
 
 ---
 
 ### 04 Debugging Journal
 
 **File:** `04 Debugging Journal/2026-03-10 - Memory leak in notification-service.md`
-```markdown
+````markdown
 # Memory Leak in notification-service
 
 **Date:** 2026-03-10
@@ -736,14 +736,14 @@ held strong references.
 ---
 **Related:** [[notification-service]] | [[Kafka Consumer Groups]] | [[Java Memory Management]]
 **Tags:** #debugging #memory-leak #java #kafka
-```
+````
 
 ---
 
 ### 05 Incident Log
 
 **File:** `05 Incident Log/2026-01-22 - Duplicate Orders Incident.md`
-```markdown
+````markdown
 # Incident: Duplicate Orders
 
 **Date:** 2026-01-22
@@ -788,14 +788,14 @@ endpoint. It treated every request as a new order.
 ---
 **Related:** [[order-service]] | [[payment-service]] | [[Idempotency Patterns]] | [[API Design Principles]]
 **Tags:** #incident #p1 #idempotency #payments
-```
+````
 
 ---
 
 ### 06 Meeting Notes
 
 **File:** `06 Meeting Notes/2026-03-14 - Architecture Review - Cache Strategy.md`
-```markdown
+````markdown
 # Architecture Review: Cache Strategy
 
 **Date:** 2026-03-14
@@ -826,7 +826,7 @@ endpoint. It treated every request as a new order.
 
 ---
 **Tags:** #meeting #architecture #caching
-```
+````
 
 ---
 
@@ -887,7 +887,7 @@ and mentoring at least one junior engineer.
 ### 08 Project Notes
 
 **File:** `08 Project Notes/Project - Cache Layer Implementation.md`
-```markdown
+````markdown
 # Project: Cache Layer Implementation
 
 **Status:** In Progress
@@ -941,14 +941,14 @@ what I'd do differently]
 ---
 **Related:** [[product-service]] | [[ADR-002 - Redis Cache Strategy]] | [[Redis]]
 **Tags:** #project #active #caching #performance
-```
+````
 
 ---
 
 ### 09 Runbooks
 
 **File:** `09 Runbooks/Runbook - Deploy order-service.md`
-```markdown
+````markdown
 # Runbook: Deploy order-service
 
 **Last verified:** 2026-03-10
@@ -1027,14 +1027,14 @@ kubectl rollout status deployment/order-service -n commerce
 ---
 **Related:** [[order-service]] | [[Kubernetes Cheat Sheet]]
 **Tags:** #runbook #deployment #order-service
-```
+````
 
 ---
 
 ### 10 People & Teams
 
 **File:** `10 People & Teams/Raj Patel.md`
-```markdown
+````markdown
 # Raj Patel
 
 **Role:** Staff Engineer, Platform Team
@@ -1068,14 +1068,14 @@ to well-structured messages with context. Gets frustrated by vague requests.
 
 ---
 **Tags:** #people #platform-team #kafka #kubernetes
-```
+````
 
 ---
 
 ### 11 Code Review Learnings
 
 **File:** `11 Code Review Learnings/Pattern - Fail Fast Validation.md`
-```markdown
+````markdown
 # Pattern: Fail Fast Validation
 
 **Source:** Feedback from Amit on my PR #342
@@ -1132,14 +1132,14 @@ class of bugs.
 ---
 **Related:** [[API Design Principles]] | [[Defensive Programming]]
 **Tags:** #code-review #pattern #validation #java
-```
+````
 
 ---
 
 ### 12 Weekly Log
 
 **File:** `12 Weekly Log/2026-W11 - Mar 10-14.md`
-```markdown
+````markdown
 # Week 11: March 10–14, 2026
 
 ## What I Shipped
@@ -1176,7 +1176,7 @@ class of bugs.
 
 ---
 **Tags:** #weekly-review
-```
+````
 
 ---
 
