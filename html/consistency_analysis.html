@@ -1,0 +1,502 @@
+---
+layout: default
+title: Consistency Analysis
+nav_order: 10
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mastery System — Honest Diagnosis</title>
+
+    <!-- Tabler Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+    <style>
+        :root {
+            --color-background-primary: #ffffff;
+            --color-background-secondary: #f5f5f5;
+
+            --color-text-primary: #1f2937;
+            --color-text-secondary: #6b7280;
+            --color-text-tertiary: #9ca3af;
+
+            --color-border-secondary: #d1d5db;
+            --color-border-tertiary: #e5e7eb;
+
+            --border-radius-md: 10px;
+            --border-radius-lg: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 24px;
+            font-family: Arial, sans-serif;
+            background: #f8fafc;
+            color: var(--color-text-primary);
+            max-width: 1000px;
+            margin-inline: auto;
+            line-height: 1.5;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+        }
+
+        .section {
+            margin: 0 0 2rem;
+        }
+
+        .card {
+            background: var(--color-background-primary);
+            border-radius: var(--border-radius-lg);
+            border: 1px solid var(--color-border-tertiary);
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+        }
+
+        .card-accent-purple {
+            border-left: 4px solid #7F77DD;
+            border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
+        }
+
+        .card-accent-teal {
+            border-left: 4px solid #1D9E75;
+            border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
+        }
+
+        .card-accent-amber {
+            border-left: 4px solid #BA7517;
+            border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
+        }
+
+        .card-accent-coral {
+            border-left: 4px solid #D85A30;
+            border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
+        }
+
+        .section-title {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-text-tertiary);
+            margin: 0 0 0.75rem;
+        }
+
+        .problem-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin: 0 0 0.35rem;
+        }
+
+        .problem-body {
+            font-size: 13px;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .badge-red {
+            background: #FCEBEB;
+            color: #A32D2D;
+        }
+
+        .badge-amber {
+            background: #FAEEDA;
+            color: #854F0B;
+        }
+
+        .badge-teal {
+            background: #E1F5EE;
+            color: #0F6E56;
+        }
+
+        .week-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--color-border-tertiary);
+        }
+
+        .week-row:last-child {
+            border-bottom: none;
+        }
+
+        .week-num {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--color-text-tertiary);
+            min-width: 70px;
+        }
+
+        .week-focus {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--color-text-primary);
+            margin: 0 0 2px;
+        }
+
+        .week-detail {
+            font-size: 12px;
+            color: var(--color-text-secondary);
+            margin: 0;
+        }
+
+        .mvd-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--color-border-tertiary);
+            cursor: pointer;
+        }
+
+        .mvd-row:last-child {
+            border-bottom: none;
+        }
+
+        .mvd-check {
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--color-background-secondary);
+            border: 1px solid var(--color-border-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all 0.15s ease;
+        }
+
+        .mvd-check.checked {
+            background: #1D9E75;
+            border-color: #1D9E75;
+        }
+
+        .mvd-label {
+            font-size: 13px;
+            color: var(--color-text-primary);
+        }
+
+        .mvd-time {
+            font-size: 11px;
+            color: var(--color-text-tertiary);
+            margin-left: auto;
+        }
+
+        .tab-bar {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 1.25rem;
+            background: var(--color-background-secondary);
+            padding: 4px;
+            border-radius: var(--border-radius-md);
+        }
+
+        .tab {
+            flex: 1;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 10px;
+            border: none;
+            background: transparent;
+            color: var(--color-text-secondary);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .tab:hover {
+            background: rgba(255, 255, 255, 0.6);
+        }
+
+        .tab.active {
+            background: white;
+            color: var(--color-text-primary);
+            border: 1px solid var(--color-border-tertiary);
+        }
+
+        .panel {
+            display: none;
+        }
+
+        .panel.active {
+            display: block;
+        }
+
+        .streak-bar {
+            height: 8px;
+            border-radius: 999px;
+            background: var(--color-background-secondary);
+            overflow: hidden;
+            margin: 8px 0;
+        }
+
+        .streak-fill {
+            height: 100%;
+            border-radius: 999px;
+            background: #1D9E75;
+            transition: width 0.4s ease;
+        }
+
+        .rule-box {
+            background: var(--color-background-secondary);
+            border-radius: var(--border-radius-md);
+            padding: 14px;
+            margin-top: 10px;
+        }
+
+        .rule-text {
+            font-size: 13px;
+            font-style: italic;
+            color: var(--color-text-primary);
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        h2.widget-head {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+
+        p.widget-sub {
+            font-size: 14px;
+            color: var(--color-text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .focus-btn {
+            font-size: 12px;
+            padding: 7px 12px;
+            border-radius: 20px;
+            border: 1px solid var(--color-border-secondary);
+            background: var(--color-background-secondary);
+            cursor: pointer;
+            color: var(--color-text-primary);
+        }
+
+        .focus-btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 16px;
+            }
+
+            .tab-bar {
+                flex-direction: column;
+            }
+
+            .week-row {
+                flex-direction: column;
+            }
+
+            .week-num {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<h2 class="sr-only">Mastery system consistency analysis and 90-day action plan for Shiva</h2>
+
+<h2 class="widget-head">Your Mastery System — Honest Diagnosis</h2>
+<p class="widget-sub">
+    Why you keep stopping, and exactly what to do differently in the next 90 days.
+</p>
+
+<div class="tab-bar">
+    <button class="tab active" onclick="switchTab('problems')">
+        What's stopping you
+    </button>
+    <button class="tab" onclick="switchTab('fix')">
+        The fix (90 days)
+    </button>
+    <button class="tab" onclick="switchTab('mvd')">
+        Your daily MVD
+    </button>
+</div>
+
+<!-- PROBLEMS TAB -->
+<div id="tab-problems" class="panel active">
+    <p class="section-title">Root cause diagnosis</p>
+
+    <div class="card card-accent-coral">
+        <span class="badge badge-red">Problem 1</span>
+        <p class="problem-title">
+            The system is a reference doc, not a daily driver
+        </p>
+        <p class="problem-body">
+            Your doc has 27+ skill sections across 5 parts. It's brilliant as a
+            reference — but not designed to tell you what to do today.
+        </p>
+    </div>
+
+    <div class="card card-accent-teal">
+        <span class="badge badge-teal">Root insight</span>
+        <p class="problem-title">
+            The doc is the destination, not the map
+        </p>
+        <p class="problem-body">
+            You need a tiny, daily, non-negotiable front door to the system.
+        </p>
+    </div>
+</div>
+
+<!-- FIX TAB -->
+<div id="tab-fix" class="panel">
+    <p class="section-title">90-day phased re-entry plan</p>
+
+    <div class="card">
+        <div class="week-row">
+            <div class="week-num">Week 1–2</div>
+            <div>
+                <p class="week-focus">Identity first — 15 min only</p>
+                <p class="week-detail">
+                    Do ONLY the MVD.
+                </p>
+            </div>
+        </div>
+
+        <div class="week-row">
+            <div class="week-num">Week 3–4</div>
+            <div>
+                <p class="week-focus">Add one habit stack</p>
+                <p class="week-detail">
+                    Add 10 min shadowing.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="streak-bar">
+            <div class="streak-fill" id="streak-demo"></div>
+        </div>
+        <p style="font-size:12px;color:#6b7280;">
+            Day streak (14 → 30 → 60 → 90)
+        </p>
+    </div>
+</div>
+
+<!-- MVD TAB -->
+<div id="tab-mvd" class="panel">
+    <p class="section-title">
+        Your minimum viable day — 15 minutes maximum
+    </p>
+
+    <div class="card">
+
+        <div class="mvd-row" onclick="toggleCheck(this)">
+            <div class="mvd-check">
+                <i class="ti ti-check" style="display:none;color:white;"></i>
+            </div>
+            <span class="mvd-label">Vocal warm-up</span>
+            <span class="mvd-time">3 min</span>
+        </div>
+
+        <div class="mvd-row" onclick="toggleCheck(this)">
+            <div class="mvd-check">
+                <i class="ti ti-check" style="display:none;color:white;"></i>
+            </div>
+            <span class="mvd-label">Read aloud</span>
+            <span class="mvd-time">2 min</span>
+        </div>
+
+        <div class="mvd-row" onclick="toggleCheck(this)">
+            <div class="mvd-check">
+                <i class="ti ti-check" style="display:none;color:white;"></i>
+            </div>
+            <span class="mvd-label">Teach the wall</span>
+            <span class="mvd-time">3 min</span>
+        </div>
+    </div>
+
+    <div id="mvd-complete" class="card" style="display:none;text-align:center;">
+        <p style="font-size:16px;font-weight:600;color:#1D9E75;">
+            MVD complete ✓
+        </p>
+    </div>
+</div>
+
+<script>
+    function switchTab(name) {
+        document.querySelectorAll('.tab')
+            .forEach(t => t.classList.remove('active'));
+
+        document.querySelectorAll('.panel')
+            .forEach(p => p.classList.remove('active'));
+
+        const tabs = ['problems', 'fix', 'mvd'];
+        const index = tabs.indexOf(name);
+
+        document.querySelectorAll('.tab')[index]
+            .classList.add('active');
+
+        document.getElementById('tab-' + name)
+            .classList.add('active');
+    }
+
+    function toggleCheck(row) {
+        const check = row.querySelector('.mvd-check');
+        const icon = row.querySelector('i');
+        const label = row.querySelector('.mvd-label');
+
+        const done = !check.classList.contains('checked');
+
+        check.classList.toggle('checked', done);
+        icon.style.display = done ? 'block' : 'none';
+
+        label.style.textDecoration = done
+            ? 'line-through'
+            : 'none';
+
+        label.style.opacity = done ? '0.6' : '1';
+
+        const allChecks = document.querySelectorAll('.mvd-check');
+
+        const allDone = [...allChecks]
+            .every(c => c.classList.contains('checked'));
+
+        document.getElementById('mvd-complete')
+            .style.display = allDone ? 'block' : 'none';
+    }
+
+    setTimeout(() => {
+        const bar = document.getElementById('streak-demo');
+        if (bar) {
+            bar.style.width = '33%';
+        }
+    }, 600);
+</script>
+
+</body>
+</html>
