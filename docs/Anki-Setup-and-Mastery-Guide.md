@@ -1,3 +1,9 @@
+---
+layout: default
+title: Anki Setup & Mastery Guide
+nav_order: 7
+---
+
 # Anki Setup & Mastery Guide
 
 > **Purpose:** This file is your permanent reference for using Anki as part of the Mastery System. Consult it whenever you need to create cards, adjust settings, or troubleshoot your review habit.

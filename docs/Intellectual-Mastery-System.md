@@ -1,3 +1,9 @@
+---
+layout: default
+title: Intellectual Mastery System
+nav_order: 5
+---
+
 # The Intellectual Mastery System
 
 > A complete, evidence-based system for becoming a deep thinker, lifelong learner, and exceptional communicator — modeled on the cognitive habits of Naval Ravikant, Richard Feynman, Sam Harris, Paul Graham, and Elon Musk.

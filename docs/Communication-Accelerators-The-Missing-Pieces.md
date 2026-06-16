@@ -1,3 +1,9 @@
+---
+layout: default
+title: Communication Accelerators — The Missing Pieces
+nav_order: 3
+---
+
 # Communication Accelerators — The Missing Pieces
 
 > Everything your other two documents DON'T cover — the hidden multipliers that separate good communicators from truly exceptional ones.

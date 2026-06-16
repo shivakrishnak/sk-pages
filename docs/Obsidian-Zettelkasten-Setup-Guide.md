@@ -1,3 +1,9 @@
+---
+layout: default
+title: Obsidian Zettelkasten Setup Guide
+nav_order: 8
+---
+
 # Obsidian Zettelkasten Setup Guide
 
 > **Purpose:** This file lives inside your Mastery vault as a permanent reference. Consult it whenever you need to understand the system, move notes, or set up a new feature.

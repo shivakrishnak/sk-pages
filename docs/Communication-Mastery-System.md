@@ -1,3 +1,9 @@
+---
+layout: default
+title: Communication Mastery System
+nav_order: 2
+---
+
 # The Complete Communication Mastery System
 
 > A research-backed roadmap for achieving elite-level English communication — designed for an educated Indian professional aiming for natural, articulate, and authoritative speech.

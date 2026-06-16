@@ -1,3 +1,9 @@
+---
+layout: default
+title: Obsidian Engineering Vault — Setup Guide
+nav_order: 9
+---
+
 # Obsidian Engineering Vault — Setup Guide
 
 > **Purpose:** This is your second brain for software engineering. Everything you learn, debug, decide, and build gets captured here. In 6 months, you'll be the person everyone comes to because you REMEMBER everything — not because your memory is better, but because your SYSTEM is better.

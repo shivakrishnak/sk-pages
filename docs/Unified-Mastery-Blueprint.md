@@ -1,3 +1,9 @@
+---
+layout: default
+title: Unified Mastery Blueprint
+nav_order: 6
+---
+
 # The Unified Mastery Blueprint
 
 > The single plan to follow — combining Communication, Intellectual Development, and Personal Growth into one realistic, phased system.

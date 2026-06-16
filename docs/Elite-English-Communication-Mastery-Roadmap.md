@@ -1,3 +1,9 @@
+---
+layout: default
+title: Elite English Communication Mastery
+nav_order: 4
+---
+
 # Elite English Communication Mastery — A Complete Roadmap
 
 ### For Non-Native Speakers Targeting Near-Native Fluency & Professional Excellence
