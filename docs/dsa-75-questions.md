@@ -1,3 +1,9 @@
+---
+layout: default
+title: Dsa-75
+nav_order: 10
+---
+
 Assume standard ListNode{val,next} and TreeNode{val,left,right} classes are defined.
 
 PATTERN: TWO POINTERS
