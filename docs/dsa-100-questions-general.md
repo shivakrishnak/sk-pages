@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Dsa-100
+title: Dsa100
 nav_order: 11
 ---
 
