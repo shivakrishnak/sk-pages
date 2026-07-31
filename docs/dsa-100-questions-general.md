@@ -2,7 +2,6 @@
 layout: default
 title: Dsa100
 nav_order: 11
-render_with_liquid: false
 ---
 
 100 High-ROI DSA Questions, Grouped by Pattern — General Interview Reference
@@ -1698,6 +1697,7 @@ private void fill(int[][] img, int i, int j, int oldColor, int newColor) {
 **96. Rotting Oranges (multi-source BFS, minutes to rot all)**
 **BF:** repeatedly scan whole grid each minute until no change - O(rows*cols) per minute, slow
 **Opt:** multi-source BFS, start from all rotten oranges simultaneously - O(rows*cols)
+{% raw %}
 ```java
 public int orangesRotting(int[][] grid) {
     Queue<int[]> q = new LinkedList<>();
@@ -1725,6 +1725,7 @@ public int orangesRotting(int[][] grid) {
     return fresh==0 ? minutes : -1;
 }
 ```
+{% endraw %}
 
 **97. Number of Provinces (connected components via adjacency matrix)**
 **BF:** n/a — DFS from every unvisited city is the standard approach (Union-Find is the alternative, same complexity class)
