@@ -1,3 +1,9 @@
+---
+layout: default
+title: Dsa-100
+nav_order: 11
+---
+
 100 High-ROI DSA Questions, Grouped by Pattern — General Interview Reference
 Assume standard ListNode{val,next} and TreeNode{val,left,right} classes are defined.
 
