@@ -2,6 +2,7 @@
 layout: default
 title: Dsa100
 nav_order: 11
+render_with_liquid: false
 ---
 
 100 High-ROI DSA Questions, Grouped by Pattern — General Interview Reference
